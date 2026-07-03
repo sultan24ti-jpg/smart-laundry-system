@@ -306,6 +306,16 @@ export const getTransaksiById = async (id) => {
   return mapTransaksi(data);
 };
 
+export const getTransaksiByPelangganId = async (pelangganId) => {
+  const { data, error } = await supabase
+    .from('transaksi')
+    .select('*')
+    .eq('pelanggan_id', pelangganId)
+    .order('created_at', { ascending: false });
+  check(error);
+  return (data || []).map(mapTransaksi);
+};
+
 export const getTransaksiByKode = async (kode) => {
   const { data, error } = await supabase
     .from('transaksi')
@@ -508,6 +518,7 @@ export default {
   deletePelanggan,
   getAllTransaksi,
   getTransaksiById,
+  getTransaksiByPelangganId,
   getTransaksiByKode,
   createTransaksi,
   updateTransaksiStatus,

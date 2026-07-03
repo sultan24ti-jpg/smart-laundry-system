@@ -51,6 +51,7 @@ const CekStatus = () => {
     if (n.includes('express')) return '/images/setrika-express.png';
     if (n.includes('reguler')) return '/images/setrika-reguler.png';
     if (n.includes('setrika saja')) return '/images/setrika-saja.png';
+    if (n.includes('boneka')) return '/images/cuci-boneka.png';
     
     return '/images/default-service.png'; // Fallback jika ada penambahan nama baru
   };
@@ -64,9 +65,9 @@ const CekStatus = () => {
         <div className="absolute bottom-[-10%] right-[-5%] w-[300px] h-[300px] bg-cyan-100/40 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="text-xs font-bold tracking-widest text-cyan-500 uppercase block mb-1">우리 이야기</span>
+          <span className="text-xs font-bold tracking-widest text-cyan-500 uppercase block mb-1">Tentang Kami</span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#199bb1] tracking-tight mb-4">
-            Layanan Chingu Laundry
+            Layanan Smart Laundry System
           </h1>
           <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto mb-8">
             Masukkan kode nota belanja Anda di bawah ini untuk melihat status pengerjaan pakaian secara langsung.
@@ -219,16 +220,16 @@ const CekStatus = () => {
           </div>
 
           <div className="flex-1 space-y-4 text-left pt-4 md:pt-0">
-            <span className="text-xs font-bold text-cyan-500 tracking-wider uppercase block">회사 소개 (Tentang Perusahaan)</span>
+            <span className="text-xs font-bold text-cyan-500 tracking-wider uppercase block">Tentang Kami</span>
             <h3 className="text-xl sm:text-2xl font-extrabold text-[#199bb1] leading-snug">
               Laundry Bersih, Wangi, Higienis, dan Tepat Waktu
             </h3>
             <div className="text-xs sm:text-sm text-slate-500 space-y-3 leading-relaxed">
               <p>
-                <strong className="text-cyan-600">Chingu Laundry Express</strong> adalah layanan laundry kiloan dan satuan. Kami adalah tim profesional yang selalu mengutamakan kualitas cucian & pelayanan dengan prinsip bersih, rapi, wangi, higienis & tepat waktu.
+                <strong className="text-cyan-600">SMART LAUNDRY SYSTEM</strong> adalah layanan laundry kiloan dan satuan. Kami adalah tim profesional yang selalu mengutamakan kualitas cucian & pelayanan dengan prinsip bersih, rapi, wangi, higienis & tepat waktu.
               </p>
               <p>
-                <strong className="text-cyan-600">Chingu Laundry Express</strong> menerima laundry kiloan untuk perusahaan, misal kantor, rumah sakit, asrama, pesantren, sekolah, perusahaan konveksi atau perusahaan-perusahaan semisal, silakan hubungi kami untuk penawaran harga khusus dengan kontrak minimal 3 bulan.
+                <strong className="text-cyan-600">SMART LAUNDRY SYSTEM</strong> menerima laundry kiloan untuk perusahaan, misal kantor, rumah sakit, asrama, pesantren, sekolah, perusahaan konveksi atau perusahaan-perusahaan semisal, silakan hubungi kami.
               </p>
             </div>
 
@@ -236,7 +237,7 @@ const CekStatus = () => {
               <span className="text-lg leading-none">💡</span>
               <div>
                 <strong className="block mb-0.5">Stop Mencuci Sendiri</strong>
-                <p className="text-slate-500 text-[11px]">Maksimalkan waktu berharga Anda, biarkan Tim Profesional kami yang mencuci untuk Anda!</p>
+                <p className="text-slate-500 text-[11px]">Maksimalkan waktu berharga Anda, biarkan Smart Laundry System kami yang mencuci untuk Anda!</p>
               </div>
             </div>
           </div>

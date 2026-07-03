@@ -18,11 +18,11 @@
 }
 
 :root {
-  --primary: #3B82F6;
-  --primary-dark: #2563EB;
-  --primary-light: #93C5FD;
-  --secondary: #10B981;
-  --secondary-dark: #059669;
+  --primary: #0EA5E9;
+  --primary-dark: #0284C7;
+  --primary-light: #7DD3FC;
+  --secondary: #06B6D4;
+  --secondary-dark: #0891B2;
   --warning: #F59E0B;
   --danger: #EF4444;
   --gray-50: #F9FAFB;
@@ -163,10 +163,10 @@ h4 { font-size: 1.125rem; }
 .btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; box-shadow: none; }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), #0ea5e9);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: var(--white);
 }
-.btn-primary:hover:not(:disabled) { background: linear-gradient(135deg, #2563eb, #0ea5e9); }
+.btn-primary:hover:not(:disabled) { background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark)); }
 
 .btn-secondary {
   background: rgba(229, 231, 235, 0.95);
@@ -270,7 +270,7 @@ h4 { font-size: 1.125rem; }
 .auth-logo h1 {
   font-size: 2rem;
   margin-bottom: 8px;
-  background: linear-gradient(90deg, #2563EB, #10B981);
+  background: linear-gradient(90deg, var(--primary-dark), var(--secondary));
   -webkit-background-clip: text;
   color: transparent;
 }

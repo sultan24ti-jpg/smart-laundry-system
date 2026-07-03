@@ -16,13 +16,20 @@ const Navbar = ({ onToggleSidebar }) => {
 
   return (
     <header className="flex items-center justify-between gap-4 bg-white border-b border-slate-200 px-4 py-3 shadow-sm md:px-8">
-      <button
-        onClick={onToggleSidebar}
-        aria-label="Toggle menu"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 md:hidden"
-      >
-        <FiMenu />
-      </button>
+      {onToggleSidebar ? (
+        <button
+          onClick={onToggleSidebar}
+          aria-label="Toggle menu"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 md:hidden"
+        >
+          <FiMenu />
+        </button>
+      ) : (
+        <div className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+          <span>🧺</span>
+          <span>Smart Laundry</span>
+        </div>
+      )}
 
       <div className="flex-1" />
 

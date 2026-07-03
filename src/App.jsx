@@ -21,6 +21,20 @@ import DaftarPelanggan from './components/pelanggan/DaftarPelanggan';
 
 const AppShell = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { user } = useAuth();
+  const isOwnerOrKasir = user && ['owner', 'kasir'].includes(user.role);
+
+  // Pelanggan tidak butuh sidebar sama sekali — layout jadi navbar atas full width,
+  // supaya lebih mirip landing page Chingu Laundry ketimbang panel admin.
+  if (!isOwnerOrKasir) {
+    return (
+      <div className="min-h-screen bg-slate-50">
+        <Navbar />
+        <main className="mx-auto max-w-6xl p-6 md:p-8">{children}</main>
+      </div>
+    );
+  }
+
   return (
     <div className="flex min-h-screen bg-slate-50">
       <Sidebar isOpen={sidebarOpen} />
