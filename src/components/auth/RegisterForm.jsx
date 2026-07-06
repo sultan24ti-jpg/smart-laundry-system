@@ -80,7 +80,7 @@ const RegisterForm = () => {
               <input
                 type="text"
                 name="nama"
-                className={`form-input ${errors.nama ? 'error' : ''}`}
+                className={`form-input input input-bordered w-full ${errors.nama ? "error input-error" : ""}`}
                 placeholder="Masukkan nama lengkap"
                 value={formData.nama}
                 onChange={handleChange}
@@ -96,7 +96,7 @@ const RegisterForm = () => {
               <input
                 type="email"
                 name="email"
-                className={`form-input ${errors.email ? 'error' : ''}`}
+                className={`form-input input input-bordered w-full ${errors.email ? "error input-error" : ""}`}
                 placeholder="nama@email.com"
                 value={formData.email}
                 onChange={handleChange}
@@ -112,7 +112,7 @@ const RegisterForm = () => {
               <input
                 type="tel"
                 name="nohp"
-                className={`form-input ${errors.nohp ? 'error' : ''}`}
+                className={`form-input input input-bordered w-full ${errors.nohp ? "error input-error" : ""}`}
                 placeholder="08xxxxxxxxxx"
                 value={formData.nohp}
                 onChange={handleChange}
@@ -128,7 +128,7 @@ const RegisterForm = () => {
               <input
                 type="password"
                 name="password"
-                className={`form-input ${errors.password ? 'error' : ''}`}
+                className={`form-input input input-bordered w-full ${errors.password ? "error input-error" : ""}`}
                 placeholder="Minimal 6 karakter"
                 value={formData.password}
                 onChange={handleChange}
@@ -144,7 +144,7 @@ const RegisterForm = () => {
               <input
                 type="password"
                 name="confirmPassword"
-                className={`form-input ${errors.confirmPassword ? 'error' : ''}`}
+                className={`form-input input input-bordered w-full ${errors.confirmPassword ? "error input-error" : ""}`}
                 placeholder="Ulangi password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
@@ -154,7 +154,7 @@ const RegisterForm = () => {
           </div>
 
           <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
-            {loading ? 'Memproses...' : (<><FiUserPlus /> Daftar</>)}
+            {loading ? (<><span className="loading loading-spinner loading-sm" /> Memproses...</>) : (<><FiUserPlus /> Daftar</>)}
           </button>
         </form>
 

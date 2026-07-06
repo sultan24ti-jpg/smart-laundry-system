@@ -70,7 +70,7 @@ const LoginForm = () => {
               <input
                 type="email"
                 name="email"
-                className={`form-input ${errors.email ? 'error' : ''}`}
+                className={`form-input input input-bordered w-full ${errors.email ? "error input-error" : ""}`}
                 placeholder="nama@email.com"
                 value={formData.email}
                 onChange={handleChange}
@@ -86,7 +86,7 @@ const LoginForm = () => {
               <input
                 type="password"
                 name="password"
-                className={`form-input ${errors.password ? 'error' : ''}`}
+                className={`form-input input input-bordered w-full ${errors.password ? "error input-error" : ""}`}
                 placeholder="Masukkan password"
                 value={formData.password}
                 onChange={handleChange}
@@ -96,15 +96,14 @@ const LoginForm = () => {
           </div>
 
           <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
-            {loading ? 'Memproses...' : (<><FiLogIn /> Masuk</>)}
+            {loading ? (<><span className="loading loading-spinner loading-sm" /> Memproses...</>) : (<><FiLogIn /> Masuk</>)}
           </button>
         </form>
 
         <div className="auth-footer">
           <p>Belum punya akun? <Link to="/register">Daftar di sini</Link></p>
-          <p style={{ marginTop: '10px' }}>
-            Demo: owner@laundry.com / admin123
-          </p>
+          <div className="divider text-xs text-slate-400 my-3">demo</div>
+          <p className="badge badge-ghost badge-sm">owner@laundry.com / admin123</p>
         </div>
       </div>
     </div>

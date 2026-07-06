@@ -15,42 +15,52 @@ const Navbar = ({ onToggleSidebar }) => {
   const initial = user?.nama ? user.nama.charAt(0).toUpperCase() : '?';
 
   return (
-    <header className="flex items-center justify-between gap-4 bg-white border-b border-slate-200 px-4 py-3 shadow-sm md:px-8">
-      {onToggleSidebar ? (
-        <button
-          onClick={onToggleSidebar}
-          aria-label="Toggle menu"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 md:hidden"
-        >
-          <FiMenu />
-        </button>
-      ) : (
-        <div className="flex items-center gap-2 text-lg font-semibold text-slate-900">
-          <span>🧺</span>
-          <span>Smart Laundry</span>
-        </div>
-      )}
-
-      <div className="flex-1" />
-
-      {user ? (
-        <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-500 text-lg font-semibold text-white shadow-sm">
-            {initial}
-          </div>
-          <div className="hidden md:block">
-            <div className="text-sm font-semibold text-slate-900">{user.nama}</div>
-            <div className="text-xs uppercase tracking-[0.18em] text-slate-500">{user.role}</div>
-          </div>
+    <header className="navbar-glass navbar px-4 md:px-8 min-h-0 py-3">
+      <div className="navbar-start">
+        {onToggleSidebar ? (
           <button
-            onClick={handleLogout}
-            title="Keluar"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50"
+            onClick={onToggleSidebar}
+            aria-label="Toggle menu"
+            className="btn btn-circle btn-ghost bg-white/70 border border-white/70 shadow-sm backdrop-blur-md md:hidden"
           >
-            <FiLogOut /> Keluar
+            <FiMenu />
           </button>
-        </div>
-      ) : null}
+        ) : (
+          <div className="flex items-center gap-2.5">
+            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 via-indigo-500 to-pink-500 text-lg shadow-lg shadow-indigo-300/50 ring-1 ring-white/60">
+              🧺
+            </span>
+            <span className="text-lg font-extrabold tracking-tight bg-gradient-to-r from-sky-600 via-indigo-600 to-pink-500 bg-clip-text text-transparent font-display">
+              Smart Laundry
+            </span>
+          </div>
+        )}
+      </div>
+
+      <div className="navbar-center hidden" />
+
+      <div className="navbar-end">
+        {user ? (
+          <div className="flex items-center gap-3">
+            <div className="avatar placeholder">
+              <div className="w-11 rounded-full bg-gradient-to-br from-sky-500 to-pink-500 text-white ring-2 ring-white/70 shadow-lg shadow-pink-300/40">
+                <span className="text-lg font-semibold">{initial}</span>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <div className="text-sm font-bold text-slate-800">{user.nama}</div>
+              <div className="badge badge-secondary badge-outline badge-sm font-bold uppercase tracking-wider">{user.role}</div>
+            </div>
+            <button
+              onClick={handleLogout}
+              title="Keluar"
+              className="btn btn-sm rounded-full border border-white/70 bg-white/70 text-slate-700 shadow-sm backdrop-blur-md hover:bg-white hover:text-pink-600 normal-case font-bold"
+            >
+              <FiLogOut /> <span className="hidden sm:inline">Keluar</span>
+            </button>
+          </div>
+        ) : null}
+      </div>
     </header>
   );
 };

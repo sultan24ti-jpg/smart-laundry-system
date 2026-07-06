@@ -39,7 +39,7 @@ const DaftarLayanan = () => {
               </div>
               <div className="service-footer">
                 <span className="price-tag">{formatCurrency(l.harga)}</span>
-                <span className="service-badge">Tersedia</span>
+                <span className="badge badge-secondary badge-outline font-bold">Tersedia</span>
               </div>
             </div>
           ))}
@@ -47,7 +47,7 @@ const DaftarLayanan = () => {
       )}
 
       <div style={{ marginTop: '20px' }}>
-        <Link to="/transaksi/baru" className="btn btn-primary">Buat Transaksi</Link>
+        <Link to="/transaksi/baru" className="btn btn-primary normal-case">Buat Transaksi</Link>
       </div>
     </div>
   );

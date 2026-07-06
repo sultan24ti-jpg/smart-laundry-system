@@ -35,18 +35,19 @@ export const ToastProvider = ({ children }) => {
   return (
     <ToastContext.Provider value={toast}>
       {children}
-      <div className="fixed right-4 top-4 z-50 flex flex-col gap-3">
+      <div className="toast toast-top toast-end z-50">
         {toasts.map((t) => (
           <div
             key={t.id}
-            className={`flex items-center gap-3 rounded-2xl border px-4 py-3 text-sm shadow-lg transition duration-200 ${
+            role="alert"
+            className={`alert border-none shadow-lg rounded-2xl text-sm rise-in ${
               t.type === 'success'
-                ? 'border-emerald-200 bg-emerald-500 text-white'
+                ? 'bg-emerald-500 text-white'
                 : t.type === 'error'
-                ? 'border-rose-200 bg-rose-500 text-white'
+                ? 'bg-rose-500 text-white'
                 : t.type === 'warning'
-                ? 'border-amber-200 bg-amber-500 text-slate-900'
-                : 'border-sky-200 bg-sky-500 text-white'
+                ? 'bg-amber-500 text-slate-900'
+                : 'bg-sky-500 text-white'
             }`}
           >
             {icons[t.type]}

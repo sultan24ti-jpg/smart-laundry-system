@@ -28,15 +28,47 @@ const AppShell = ({ children }) => {
   // supaya lebih mirip landing page Chingu Laundry ketimbang panel admin.
   if (!isOwnerOrKasir) {
     return (
-      <div className="min-h-screen bg-slate-50">
+      <div className="min-h-screen">
         <Navbar />
         <main className="mx-auto max-w-6xl p-6 md:p-8">{children}</main>
+        <footer className="site-footer">
+          <div className="footer-glow w-72 h-72 bg-sky-500/30 -top-20 -left-10" />
+          <div className="footer-glow w-72 h-72 bg-pink-500/25 -bottom-24 right-0" />
+          <div className="relative z-10 mx-auto max-w-6xl px-6 py-12 md:px-8">
+            <footer className="footer">
+              <aside>
+                <div className="mb-3 flex items-center gap-2.5">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 via-indigo-500 to-pink-500 text-lg ring-1 ring-white/20">🧺</span>
+                  <span className="text-lg font-extrabold font-display bg-gradient-to-r from-sky-300 via-indigo-200 to-pink-300 bg-clip-text text-transparent">Smart Laundry</span>
+                </div>
+                <p className="text-sm text-slate-300/80 leading-relaxed max-w-xs">
+                  Laundry bersih, wangi, higienis, dan tepat waktu. Kami bantu urus cucianmu, kamu fokus ke hal yang lebih penting.
+                </p>
+              </aside>
+              <nav>
+                <h6 className="footer-title text-pink-300 opacity-100">Layanan</h6>
+                <span className="text-sm text-slate-300/80">Cuci Kiloan &amp; Satuan</span>
+                <span className="text-sm text-slate-300/80">Cuci Sepatu</span>
+                <span className="text-sm text-slate-300/80">Cuci Bed Cover</span>
+                <span className="text-sm text-slate-300/80">Setrika Express &amp; Reguler</span>
+              </nav>
+              <nav>
+                <h6 className="footer-title text-pink-300 opacity-100">Kontak</h6>
+                <span className="text-sm text-slate-300/80">Buka setiap hari, 08.00 – 20.00</span>
+                <span className="text-sm text-slate-300/80">Lacak status cucian kapan saja via kode nota</span>
+              </nav>
+            </footer>
+            <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-slate-400">
+              © {new Date().getFullYear()} Smart Laundry System. Dibuat dengan 💙 &amp; 💗.
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen bg-slate-50">
+    <div className="flex min-h-screen">
       <Sidebar isOpen={sidebarOpen} />
       <div className="flex-1 md:ml-64">
         <Navbar onToggleSidebar={() => setSidebarOpen((v) => !v)} />
